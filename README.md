@@ -1,27 +1,57 @@
-# Next.js + Tailwind CSS Example
+Netflix Clone with Next.js
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This is a Netflix clone made with Next.js using React, TMDB, Firebase, Redux, Recoil, MUI Modal, and Authentication. This project allows users to browse and watch movies and TV shows, just like on Netflix.
 
-## Deploy your own
+Author: Saptak-Bose["https://github.com/Saptak-Bose"]("https://github.com/Saptak-Bose")
+Technologies Used
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+• Next.js
+• React
+• TMDB
+• Firebase
+• Redux
+• Recoil
+• MUI Modal
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+• Getting Started
+• Clone the repository to your local machine.
+• Install the necessary dependencies by running `npm install #or yarn add`.
+• Obtain a `TMDB API key` and `Firebase configuration` details.
+• Create a `.env.local` file in the root directory of the project.
+• Add the following environment variables to the `.env.local` file:
 
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
+```makefile
+    NEXT_PUBLIC_API_KEY=YOUR_TMDB_API_KEY
 ```
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+• Start the development server by running:
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+    ```bash
+    npm run dev
+        #or
+    yarn run dev
+    ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+• Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Features
+• Browse movies and TV shows
+• Search for movies and TV shows
+• Watch trailers and videos
+• Add movies and TV shows to your watchlist
+• Authenticate users
+• Save user preferences and watch history
+
+Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+License
+
+This project is licensed under the MIT License.
+
+Demo:
+
+A full demo of this app can be found on ["https://netflix-clone-ten-lilac.vercel.app/"]("https://netflix-clone-ten-lilac.vercel.app/)
+
+Thank You! :)
