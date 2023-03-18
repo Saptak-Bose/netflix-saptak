@@ -1,7 +1,10 @@
 import type { GetServerSideProps } from "next";
 import Head from "next/head";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { modalState, movieState } from "../atoms/modalAtom";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
+import Modal from "../components/Modal";
 import Row from "../components/Row";
 import useAuth from "../hooks/useAuth";
 import requests from "../utils/requests";
@@ -28,13 +31,19 @@ const Home = ({
   trendingNow,
 }: Props) => {
   const { loading } = useAuth();
+  const showModal = useRecoilValue(modalState);
+  const [movie, setMovie] = useRecoilState(movieState);
 
   if (loading) return null;
 
   return (
     <div>
       <Head>
-        <title>Netflix - Watch TV Shows Online, Watch Movies Online</title>
+        <title>
+          {movie?.title ||
+            movie?.original_name ||
+            "Netflix - Watch TV Shows Online, Watch Movies Online"}
+        </title>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -72,7 +81,7 @@ const Home = ({
             <Row title="Documentaries" movies={documentaries} />
           </section>
         </main>
-        {/* Modal */}
+        {showModal && <Modal />}
       </div>
     </div>
   );

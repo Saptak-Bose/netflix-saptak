@@ -97,7 +97,11 @@ const Login = (props: Props) => {
                 className="input"
                 type="password"
                 placeholder="Password"
-                {...register("password", { required: true })}
+                {...register("password", {
+                  required: true,
+                  minLength: 8,
+                  maxLength: 60,
+                })}
               />
               {errors.password && (
                 <p className="p-1 text-[13px] font-light text-orange-500">
@@ -107,24 +111,38 @@ const Login = (props: Props) => {
             </label>
           </div>
 
-          <button
-            type="submit"
-            onClick={() => setLogin(true)}
-            className="w-full rounded bg-[#e50914] py-3 font-semibold"
-          >
-            Sign In
-          </button>
-
-          <div className="text-[gray]">
-            New to Netflix?{" "}
+          <div>
             <button
               type="submit"
-              onClick={() => setLogin(false)}
-              className="text-white hover:underline"
+              onClick={() => setLogin(true)}
+              className="w-full rounded bg-[#e50914] py-3 font-semibold"
             >
-              Sign Up
+              Log In
             </button>
+
+            <div className="flex justify-between mt-1">
+              <div className="flex items-center space-x-1 text-sm text-gray-300">
+                <input type="checkbox" className="cursor-pointer" />
+                <h1>Remember me</h1>
+              </div>
+              <h3 className="text-sm text-gray-300 hover:underline cursor-pointer">
+                Need Help?
+              </h3>
+            </div>
           </div>
+
+          <div className="text-center text-[gray] text-xss">
+            If You are New to Netflix, then please click the button below to
+            register
+          </div>
+
+          <button
+            type="submit"
+            onClick={() => setLogin(false)}
+            className="w-full rounded bg-[#e50914] py-3 font-semibold mt-3 text-white"
+          >
+            Sign Up
+          </button>
         </form>
       </div>
     </div>
